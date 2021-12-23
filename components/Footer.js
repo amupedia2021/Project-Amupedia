@@ -7,7 +7,7 @@ import { faLinkedin } from "node_modules/@fortawesome/free-brands-svg-icons/inde
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer id="footer">
 			<div id={styles.above_bg}>
 				<p>Folow Us On</p>
 				<div id={styles.icons}>

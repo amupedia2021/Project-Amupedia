@@ -1,0 +1,51 @@
+@import "./config";
+
+.main {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	z-index: -2;
+	background: linear-gradient(
+		214deg,
+		rgba(181, 177, 237, 1) 0%,
+		rgba(195, 195, 255, 1) 35%,
+		rgba(240, 250, 252, 1) 100%
+	);
+}
+
+.container {
+	width: 100%;
+	min-height: 100vh;
+	@include flex;
+	flex-direction: column;
+
+	& > .background {
+		position: absolute;
+		width: 70%;
+		height: 50vh;
+		max-width: 600px;
+		max-height: 300px;
+		margin: auto;
+		background-color: rgb(230, 225, 255);
+		z-index: -1;
+		border-radius: 54% 28% 62% 27% / 41% 28% 58% 60%;
+	}
+
+	& > .title {
+		opacity: 0.9;
+		font-size: 20rem;
+		line-height: 0.7;
+		color: rgb(147, 127, 249);
+	}
+
+	& > .tagline {
+		font-size: 1.8rem;
+		line-height: 0.3;
+	}
+}
+
+@include media-md {
+	.title {
+		font-size: 10rem !important;
+	}
+}

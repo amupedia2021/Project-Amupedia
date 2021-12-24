@@ -1,6 +1,5 @@
 import Navbar from "@comp/Navbar";
 import "@styles/globals.css";
-import Footer from "components/Footer";
 import Head from "node_modules/next/head";
 
 function MyApp({ Component, pageProps }) {
@@ -15,7 +14,6 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Navbar />
 			<Component {...pageProps} />
-			<Footer />
 		</>
 	);
 }

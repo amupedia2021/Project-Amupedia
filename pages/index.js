@@ -9,6 +9,7 @@ import Tilt from "react-vanilla-tilt";
 import styles from "@styles/Home.module.css";
 import Header from "components/Header";
 import Link from "next/link";
+import Footer from "components/Footer";
 
 export default function Home() {
 	const emptyForm = {
@@ -197,6 +198,7 @@ export default function Home() {
 					</form>
 				</section>
 			</main>
+			<Footer />
 		</>
 	);
 }

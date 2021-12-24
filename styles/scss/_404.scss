@@ -1,5 +1,23 @@
 @import "./config";
 
+@keyframes rightleft {
+	0% {
+		transform: translateX(0);
+	}
+	25% {
+		transform: translateX(150px);
+	}
+	50% {
+		transform: translateX(0);
+	}
+	75% {
+		transform: translateX(-150px);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
 .main {
 	position: fixed;
 	height: 100vh;
@@ -36,16 +54,42 @@
 		font-size: 20rem;
 		line-height: 0.7;
 		color: rgb(147, 127, 249);
+		transform: translateY(-40px);
 	}
 
 	& > .tagline {
 		font-size: 1.8rem;
 		line-height: 0.3;
 	}
+
+	& > .ufo {
+		z-index: 2;
+		position: relative;
+		bottom: 80px;
+		height: 120px;
+		width: 240px;
+		background: url("/images/404/UFO404.svg") no-repeat center center/cover;
+		animation: rightleft 5s ease-in-out infinite;
+		&::after {
+			content: "";
+			position: absolute;
+			background: rgba(255, 255, 255, 0.235);
+			height: 120px;
+			width: 240px;
+			top: 170px;
+			border-radius: 80%;
+			margin: auto;
+		}
+	}
 }
 
-@include media-md {
+@include media-sm {
 	.title {
 		font-size: 10rem !important;
+	}
+	.ufo::after {
+		top: 140px !important;
+		height: 120px;
+		width: 240px;
 	}
 }

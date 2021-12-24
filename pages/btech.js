@@ -1,11 +1,12 @@
 import Header from "components/Header";
 import styles from "@styles/Btech.module.css";
 import Link from "next/link";
+import Footer from "components/Footer";
 
 export default () => {
 	const image = "/images/btech/top_bg.svg";
 	return (
-		<div>
+		<>
 			<Header image={image} text="B.Tech" />
 			{/* <!-- content of b.tech section  --> */}
 			<section id={styles.btcontent}>
@@ -55,6 +56,7 @@ export default () => {
 					</Link>
 				</div>
 			</section>
-		</div>
+			<Footer />
+		</>
 	);
 };

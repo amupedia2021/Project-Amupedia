@@ -1,9 +1,11 @@
 import styles from "@styles/scss/main.module.scss";
-import Image from "next/image";
 
 export default () => {
 	return (
 		<main className={styles.main}>
+			<div id={styles.stars}></div>
+			<div id={styles.stars2}></div>
+			<div id={styles.stars3}></div>
 			<div className={styles.container}>
 				<div className={styles.ufo}></div>
 				<div className={styles.background}></div>

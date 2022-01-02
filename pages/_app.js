@@ -1,10 +1,23 @@
 import Navbar from "@comp/Navbar";
 import "@styles/globals.css";
 import Head from "node_modules/next/head";
+import { motion } from "framer-motion";
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
 	return (
-		<>
+		<motion.div
+			key={router.route}
+			initial="pageInitial"
+			animate="pageAnimate"
+			variants={{
+				pageInitial: {
+					opacity: 0,
+				},
+				pageAnimate: {
+					opacity: 1,
+				},
+			}}
+		>
 			<Head>
 				<title>Amupedia</title>
 				<meta
@@ -14,7 +27,7 @@ function MyApp({ Component, pageProps }) {
 			</Head>
 			<Navbar />
 			<Component {...pageProps} />
-		</>
+		</motion.div>
 	);
 }
 

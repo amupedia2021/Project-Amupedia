@@ -1,5 +1,6 @@
 import styles from "@styles/Header.module.css";
 import Wave from "./Wave";
+import { motion } from "framer-motion";
 
 export default (props) => {
 	const { image, text } = props;
@@ -18,12 +19,26 @@ export default (props) => {
 					}}
 				></div>
 
-				<div className={styles.center_text}>
+				<motion.div
+					className={styles.center_text}
+					initial="hidden"
+					animate="visible"
+					variants={{
+						hidden: {
+							scale: 0.8,
+							opacity: 0,
+						},
+						visible: {
+							scale: 1,
+							opacity: 1,
+						},
+					}}
+				>
 					<p>{text}</p>
 					{text === "Amupedia" && (
 						<p className={styles.subline}>Achieving excellence together</p>
 					)}
-				</div>
+				</motion.div>
 				<Wave />
 			</div>
 		</>

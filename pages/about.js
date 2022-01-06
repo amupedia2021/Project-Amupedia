@@ -1,6 +1,7 @@
 import Header from "components/Header";
 import styles from "@styles/scss/main.module.scss";
 import Footer from "components/Footer";
+import Team from "components/Team";
 
 export default () => {
 	const image = "/images/about/about_bg.svg";
@@ -23,6 +24,7 @@ export default () => {
 					</p>
 				</div>
 
+				{/* Our Story  */}
 				<div className={`${styles.whoWeAre} ${styles.ourStory}`}>
 					<h2>Our Story</h2>
 					<p>
@@ -38,6 +40,7 @@ export default () => {
 						making a bright future for yourself.
 					</p>
 				</div>
+				<Team />
 			</main>
 			<Footer />
 		</>

@@ -1,0 +1,6 @@
+.team {
+	@include flex;
+	flex-wrap: wrap;
+	max-width: 1200px;
+	margin: auto;
+}

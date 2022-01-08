@@ -161,12 +161,12 @@ navigation menu opens in mobile phones */
 		display: none;
 	}
 	.navbar {
-		background-color: rgba(133, 133, 133, 0.112);
+		background: transparent;
 		height: 70px;
-		position: absolute;
-		z-index: 2;
+		position: fixed;
+		z-index: 1000;
 		top: 0;
-		right: 0;
+		width: 100%;
 	}
 	.list {
 		width: 500px;

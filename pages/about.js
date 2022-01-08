@@ -24,6 +24,8 @@ export default () => {
 					</p>
 				</div>
 
+				<Team />
+
 				{/* Our Story  */}
 				<div className={`${styles.whoWeAre} ${styles.ourStory}`}>
 					<h2>Our Story</h2>
@@ -40,7 +42,6 @@ export default () => {
 						making a bright future for yourself.
 					</p>
 				</div>
-				<Team />
 			</main>
 			<Footer />
 		</>

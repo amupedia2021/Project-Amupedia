@@ -81,7 +81,7 @@ export default () => {
 									router.pathname === "/blog" ? styles.active : ""
 								}`}
 							>
-								Blog
+								Blogs
 							</a>
 						</Link>
 					</li>

@@ -10,6 +10,7 @@ export default (props) => {
 				style={{
 					height: "500px",
 				}}
+				id="header"
 			>
 				{/* <!-- background on top --> */}
 				<div

@@ -38,3 +38,10 @@ input:focus {
 	font-family: "Baloo Bhai 2";
 }
 
+::-webkit-scrollbar {
+	width: 0;
+}
+
+.nav_active {
+	background-color: blueviolet;
+}

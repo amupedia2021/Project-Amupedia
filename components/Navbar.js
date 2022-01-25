@@ -1,8 +1,21 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import styles from "@styles/Navbar.module.css";
+import { useState, useEffect } from "react";
 
 export default () => {
+	const [navbar, setNavbar] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener("scroll", changeNavbar);
+	});
+
+	const changeNavbar = () => {
+		if (window.scrollY > 500) {
+			setNavbar(true);
+		} else setNavbar(false);
+	};
+
 	const router = useRouter();
 	const onClick = () => {
 		const menu = document.querySelector("#menu");
@@ -23,63 +36,95 @@ export default () => {
 			<div className={styles.blackoverlay} id="overlay" onClick={onClick}></div>
 
 			{/* <!-- navigation bar --> */}
-			<nav className={styles.navbar}>
+			<nav
+				className={
+					navbar ? `${styles.navbar} ${styles.active}` : `${styles.navbar}`
+				}
+			>
 				<ul className={styles.list}>
-					<li className={styles.listitem}>
+					<li
+						className={`${styles.listitem} ${
+							router.pathname === "/" && router.asPath === "/" && navbar
+								? styles.navList_active
+								: ""
+						}`}
+					>
 						<Link href="/">
 							<a
 								onClick={onClick}
 								className={`${styles.lnk} ${
-									router.pathname === "/" ? styles.active : ""
-								}`}
+									router.pathname === "/" && router.asPath === "/"
+										? styles.active
+										: ""
+								} ${navbar && styles.nav_active}`}
 							>
 								Home
 							</a>
 						</Link>
 					</li>
-					<li className={styles.listitem}>
+					<li
+						className={`${styles.listitem} ${
+							router.pathname === "/about" && navbar
+								? styles.navList_active
+								: ""
+						}`}
+					>
 						<Link href="/about">
 							<a
 								onClick={onClick}
 								className={`${styles.lnk} ${
 									router.pathname === "/about" ? styles.active : ""
-								}`}
+								} ${navbar && styles.nav_active}`}
 							>
 								About Us
 							</a>
 						</Link>
 					</li>
-					<li className={styles.listitem}>
+					<li
+						className={`${styles.listitem} ${
+							router.asPath === "/#courses" && navbar
+								? styles.navList_active
+								: ""
+						}`}
+					>
 						<Link href="/#courses">
 							<a
 								onClick={onClick}
 								className={`${styles.lnk} ${
-									router.pathname === "/#courses" ? styles.active : ""
-								}`}
+									router.asPath === "/#courses" ? styles.active : ""
+								} ${navbar && styles.nav_active}`}
 							>
 								Courses
 							</a>
 						</Link>
 					</li>
-					<li className={`${styles.tem} ${styles.listitem}`}>
+					<li
+						className={`${styles.tem} ${styles.listitem} ${
+							router.pathname === "/team" && navbar ? styles.navList_active : ""
+						}`}
+					>
 						<Link href="/team">
 							<a
 								onClick={onClick}
 								className={`${styles.lnk} ${
 									router.pathname === "/team" ? styles.active : ""
-								}`}
+								} ${navbar && styles.nav_active}`}
 							>
 								Team
 							</a>
 						</Link>
 					</li>
-					<li className={`${styles.blg} ${styles.listitem}`}>
+					<li
+						className={`${styles.blg} ${styles.listitem} ${
+							router.pathname === "/blog" && navbar ? styles.navList_active : ""
+						}`}
+					>
 						<Link href="/blog">
 							<a
 								onClick={onClick}
 								className={`${styles.lnk} ${
 									router.pathname === "/blog" ? styles.active : ""
-								}`}
+								} ${navbar && styles.nav_active}`}
 							>
 								Blogs
 							</a>

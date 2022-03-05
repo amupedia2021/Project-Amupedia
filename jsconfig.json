@@ -5,7 +5,8 @@
 		"paths": {
 			"@styles/*": ["/styles/*"],
 			"@comp/*": ["/components/*"],
-			"@images/*": ["/public/images/*"]
+			"@images/*": ["/public/images/*"],
+			"@modules/*": ["/modules/*"]
 		}
 	}
 }

@@ -21,7 +21,7 @@ export default function Home() {
 		message: "",
 	};
 
-	const headerImg = "/images/home/header_bg.svg";
+	const headerImg = "/images/home/homeback.svg";
 
 	const [form, setForm] = useState(emptyForm);
 

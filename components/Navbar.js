@@ -26,7 +26,7 @@ export default () => {
 		<>
 			{/* <!-- hamburger menu icon (for mobile phones) --> */}
 			<input type="checkbox" className={styles.menu} id="menu" />
-			<label htmlFor="menu" className={styles.ham}>
+			<label htmlFor="menu" className={styles.ham} id="ham">
 				<div className={`${styles.hamline} ${styles.hamline1}`}></div>
 				<div className={`${styles.hamline} ${styles.hamline2}`}></div>
 				<div className={`${styles.hamline} ${styles.hamline3}`}></div>
@@ -37,9 +37,8 @@ export default () => {
 
 			{/* <!-- navigation bar --> */}
 			<nav
-				className={
-					navbar ? `${styles.navbar} ${styles.active}` : `${styles.navbar}`
-				}
+				className={`${styles.navbar} ${navbar && styles.active}`}
+				id="navbar"
 			>
 				<ul className={styles.list}>
 					<li
@@ -76,7 +75,7 @@ export default () => {
 									router.pathname === "/about" ? styles.active : ""
 								} ${navbar && styles.nav_active}`}
 							>
-								About Us
+								About
 							</a>
 						</Link>
 					</li>

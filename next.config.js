@@ -15,3 +15,5 @@ module.exports = {
 		contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
 	},
 };
+
+// Something is better than nothing

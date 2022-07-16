@@ -16,4 +16,4 @@ module.exports = {
 	},
 };
 
-// Something is better than nothing
+// somethig is better than nothing
